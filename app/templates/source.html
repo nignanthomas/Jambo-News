@@ -1,1 +1,17 @@
-<h1>Welcome to {{id}} page</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    {% if id %}
+    <title> jamboNews -- {{ id }} Articles </title>
+    {% else %}
+    <title>jamboNews Articles</title>
+    {% endif %}
+  </head>
+  <body>
+    <h1>Welcome to {{id}} page</h1>
+
+
+
+  </body>
+</html>

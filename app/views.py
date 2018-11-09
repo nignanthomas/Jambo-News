@@ -7,7 +7,9 @@ def index():
     '''
     View root page function that returns the index page and its data.
     '''
-    return render_template('index.html')
+
+    title = 'Home - jamboNews'
+    return render_template('index.html', title = title)
 
 
 @app.route('/source/<source_id>')

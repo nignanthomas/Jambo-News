@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class.
     '''
-    pass
+    SOURCE_API_BASE_URL = 'https://newsapi.org/v2/sources?category={}&country=us&apiKey={}'
 
 
 class ProdConfig(Config):
@@ -12,15 +12,15 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings.
     '''
-     pass
+    pass
 
 
-    class DevConfig(Config):
-        '''
-        Development configuration child class
+class DevConfig(Config):
+    '''
+    Development configuration child class
 
-        Args:
-            Config: The parent cinfiguration class with general cinfiguration settings.
-        '''
+    Args:
+        Config: The parent cinfiguration class with general cinfiguration settings.
+    '''
 
-        DEBUG = True
+    DEBUG = True
