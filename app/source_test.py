@@ -18,6 +18,9 @@ class SourceTest(unittest.TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Source))
 
+    def test_instance_correct(self):
+        self.assertEqual(self.new_source.name,'National Geographic')
+
 
 if __name__ == '__main__':
     unittest.main()
