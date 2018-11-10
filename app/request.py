@@ -33,7 +33,7 @@ def get_sources(category):
 
 
 
-    def process_results(source_list):
+def process_results(source_list):
     '''
     Function  that processes the source result and transform them to a list of Objects
 
