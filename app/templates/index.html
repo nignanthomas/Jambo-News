@@ -2,6 +2,14 @@
 {% import 'macros.html' as macro%}
 
 
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+
 
 <!-- Content block -->
 {% block content %}
@@ -10,39 +18,57 @@
 
 
 <!-- Science Sources -->
-<h3> Science</h3>
-<ul>
-  {{ macro.displaySourceList(science)}}
-</ul>
+<div class="categories container">
+  <h3> Science</h3>
+  <ul>
+    {{ macro.displaySourceList(science)}}
+  </ul>
+</div>
+
 
 <!-- Business Sources -->
-<h3> Business</h3>
-<ul>
-  {{ macro.displaySourceList(business)}}
-</ul>
+<div class="categories container">
+  <h3> Business</h3>
+  <ul>
+    {{ macro.displaySourceList(business)}}
+  </ul>
+</div>
+
 
 <!-- Entertainment Sources -->
-<h3> Entertainment</h3>
-<ul>
-  {{ macro.displaySourceList(entertainment)}}
-</ul>
+<div class="categories container">
+  <h3> Entertainment</h3>
+  <ul>
+    {{ macro.displaySourceList(entertainment)}}
+  </ul>
+</div>
+
 
 <!-- General Sources -->
-<h3> General</h3>
-<ul>
-  {{ macro.displaySourceList(general)}}
-</ul>
+<div class="categories container">
+  <h3> General</h3>
+  <ul>
+    {{ macro.displaySourceList(general)}}
+  </ul>
+</div>
+
 
 <!-- Technology Sources -->
-<h3> Technology</h3>
-<ul>
-  {{ macro.displaySourceList(technology)}}
-</ul>
+<div class="categories container">
+  <h3> Technology</h3>
+  <ul>
+    {{ macro.displaySourceList(technology)}}
+  </ul>
+</div>
+
 
 <!-- Health Sources -->
-<h3> Health</h3>
-<ul>
-  {{ macro.displaySourceList(health)}}
-</ul>
+<div class="categories container">
+  <h3> Health</h3>
+  <ul>
+    {{ macro.displaySourceList(health)}}
+  </ul>
+</div>
+
 
 {% endblock %}

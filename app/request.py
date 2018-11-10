@@ -3,6 +3,7 @@ import urllib.request,json
 from .models import source,articles
 
 Source = source.Source
+Articles = articles.Articles
 
 #Getting api key
 api_key = app.config['NEWS_API_KEY']
@@ -32,6 +33,7 @@ def get_sources(category):
             source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
 
+    print(source_results)
     return source_results
 
 
@@ -69,7 +71,7 @@ def get_articles(id):
 
     with urllib.request.urlopen(get_all_articles_url) as url:
         get_articles_data = url.read()
-        get_articles_respone = json.loads(get_articles_data)
+        get_articles_response = json.loads(get_articles_data)
 
         articles_results = None
 
@@ -77,7 +79,9 @@ def get_articles(id):
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles(articles_results_list)
 
+    print(articles_results)
     return articles_results
+
 
 def process_articles(articles_list):
     '''
