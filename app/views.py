@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources
+from .request import get_sources,get_articles
 
 #Views
 @app.route('/')
@@ -42,4 +42,7 @@ def source(id):
     '''
     View source page function that returns the source and its articles.
     '''
-    return render_template('source.html', id = id)
+    all_articles = get_articles(id)
+    title = f'jamboNews -- {id.upper()}'
+    
+    return render_template('source.html', articles = all_articles, title = title)
