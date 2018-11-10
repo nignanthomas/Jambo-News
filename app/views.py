@@ -37,9 +37,9 @@ def index():
     return render_template('index.html', title = title, science = science_sources, business = business_sources, entertainment = entertainment_sources, sports = sports_sources, health = health_sources, general = general_sources, technology = technology_sources)
 
 
-@app.route('/source/<source_id>')
-def source(source_id):
+@app.route('/source/<id>')
+def source(id):
     '''
     View source page function that returns the source and its articles.
     '''
-    return render_template('source.html', id = source_id)
+    return render_template('source.html', id = id)

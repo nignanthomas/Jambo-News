@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    {% if id %}
-    <title> jamboNews -- {{ id }} Articles </title>
-    {% else %}
-    <title>jamboNews Articles</title>
-    {% endif %}
-  </head>
-  <body>
+{% extends 'base.html' %}
+
+{% block content %}
+
     <h1>Welcome to {{id}} page</h1>
 
-
-
-  </body>
-</html>
+{% endblock %}

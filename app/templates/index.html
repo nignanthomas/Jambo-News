@@ -1,56 +1,48 @@
+{% extends 'base.html' %}
 {% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }} </title>
-    {% else %}
-    <title>Welcome to jamboNews</title>
-    {% endif %}
-  </head>
-  <body>
-    <h1> Karibu ni jambo News</h1>
 
 
-    <!-- Science Sources -->
-    <h3> Science</h3>
-    <ul>
-      {{ macro.displaySourceList(science)}}
-    </ul>
+<!-- Content block -->
+{% block content %}
 
-    <!-- Business Sources -->
-    <h3> Business</h3>
-    <ul>
-      {{ macro.displaySourceList(business)}}
-    </ul>
-
-    <!-- Entertainment Sources -->
-    <h3> Entertainment</h3>
-    <ul>
-      {{ macro.displaySourceList(entertainment)}}
-    </ul>
-
-    <!-- General Sources -->
-    <h3> General</h3>
-    <ul>
-      {{ macro.displaySourceList(general)}}
-    </ul>
-
-    <!-- Technology Sources -->
-    <h3> Technology</h3>
-    <ul>
-      {{ macro.displaySourceList(technology)}}
-    </ul>
-
-    <!-- Health Sources -->
-    <h3> Health</h3>
-    <ul>
-      {{ macro.displaySourceList(health)}}
-    </ul>
+<h1> Karibu ni jambo News</h1>
 
 
+<!-- Science Sources -->
+<h3> Science</h3>
+<ul>
+  {{ macro.displaySourceList(science)}}
+</ul>
 
-  </body>
-</html>
+<!-- Business Sources -->
+<h3> Business</h3>
+<ul>
+  {{ macro.displaySourceList(business)}}
+</ul>
+
+<!-- Entertainment Sources -->
+<h3> Entertainment</h3>
+<ul>
+  {{ macro.displaySourceList(entertainment)}}
+</ul>
+
+<!-- General Sources -->
+<h3> General</h3>
+<ul>
+  {{ macro.displaySourceList(general)}}
+</ul>
+
+<!-- Technology Sources -->
+<h3> Technology</h3>
+<ul>
+  {{ macro.displaySourceList(technology)}}
+</ul>
+
+<!-- Health Sources -->
+<h3> Health</h3>
+<ul>
+  {{ macro.displaySourceList(health)}}
+</ul>
+
+{% endblock %}
