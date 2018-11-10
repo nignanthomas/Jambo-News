@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }} </title>
-    {% else %}
-    <title>Welcome to jamboNews</title>
-    {% endif %}
-  </head>
+{% extends 'bootstrap/base.html' %}
 
-
-  <body>
-    <!-- Content block -->
-
-    {% block content %}
-
-    {% endblock %}
-
-  </body>
-
-
-
-</html>
+<!-- Navbar Block -->
+{% block navbar %}
+  {% include 'navbar.html' %}
+{% endblock %}
