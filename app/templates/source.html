@@ -7,7 +7,7 @@
     {% for article in articles %}
       <div class="col-xs col-sm-6 col-md-3 col-lg-3 wells">
         <h3>{{article.title}}</h3>
-        <img src="{{article.image}}" alt="{{article.title}}">
+        <img src="{{article.image}}" alt="{{article.title}}" style="width:300px; height:200px">
         <p>{{article.description}}</p>
         <a href="{{article.url}}">Read More</a>
         <p>Published on: {{article.date}}</p>
