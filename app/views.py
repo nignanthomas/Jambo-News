@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request,redirect,url_for
 from app import app
 from .request import get_sources,get_articles,search_articles
 
@@ -32,8 +32,11 @@ def index():
     #Getting Technology Sources
     technology_sources = get_sources('technology')
 
+    search_article = request.args.get('article_query')
 
-
+    # if search_article:
+    #     return redirect(url_for('search',query=search_article))
+    # else:
     return render_template('index.html', title = title, science = science_sources, business = business_sources, entertainment = entertainment_sources, sports = sports_sources, health = health_sources, general = general_sources, technology = technology_sources)
 
 
@@ -49,6 +52,21 @@ def source(id):
     return render_template('source.html', articles = all_articles, title = title, id_up = id_up)
 
 
+@app.route('/search/')
+def search_main():
+    '''
+    View root page function that returns the search page and the form.
+    '''
+    title = 'jamboNews -- Search'
+
+    search_article = request.args.get('article_query')
+
+    if search_article:
+        return redirect(url_for('search',query=search_article))
+    else:
+        return render_template('search.html', title = title)
+
+
 @app.route('/search/<query>')
 def search(query):
     '''
@@ -58,4 +76,4 @@ def search(query):
     query_format = "+".join(query_list)
     searched_articles = search_articles(query_format)
     title = f'Search results for "{query}"'
-    return render_template('search.html',articles = searched_articles)
+    return render_template('search.html',articles = searched_articles,query=query)

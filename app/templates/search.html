@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content %}
+  <div class="container">
+
+    <div class="row">
+      <form>
+        <input type="text" name="article_query" placeholder="Search for an Article" class="form-control">
+        <input type="submit"  value="Submit" class="btn btn-default">
+      </form>
+    </div>
+
+    <div class="row">
+      <h3>Results for: {{query}}</h3>
+      <p> Found {{ articles | count }} matches </p>
+      <hr>
+      {% for article in articles %}
+        <div class="col-xs col-sm-6 col-md-3 col-lg-3 wells">
+          <h3>{{article.title}}</h3>
+          <img src="{{article.image}}" alt="{{article.title}}">
+          <p>{{article.description}}</p>
+          <a href="{{article.url}}">Read More</a>
+          <p>Published on: {{article.date}}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+{% endblock %}

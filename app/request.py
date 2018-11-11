@@ -33,7 +33,7 @@ def get_sources(category):
             source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
 
-    print(source_results)
+    
     return source_results
 
 
@@ -79,7 +79,7 @@ def get_articles(id):
             articles_results_list = get_articles_response['articles']
             articles_results = process_articles(articles_results_list)
 
-    print(articles_results)
+
     return articles_results
 
 
@@ -122,7 +122,7 @@ def search_articles(query):
 
         if search_articles_response['articles']:
             search_articles_list = search_articles_response['articles']
-            ssearch_articles_results = process_articles(search_articles_list)
+            search_articles_results = process_articles(search_articles_list)
 
 
     return search_articles_results
