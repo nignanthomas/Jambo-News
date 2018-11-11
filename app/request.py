@@ -19,7 +19,7 @@ articles_url = app.config['ARTICLES_BASE_URL']
 
 def get_sources(category):
     '''
-    Function that get the json response to our url request.
+    Function that gets the json response to our url request.
     '''
     get_sources_url = base_url.format(category,api_key)
 
@@ -65,7 +65,7 @@ def process_results(source_list):
 
 def get_articles(id):
     '''
-    Function that get the json response to our articles url request.
+    Function that gets the json response to our articles url request.
     '''
     get_all_articles_url = articles_url.format(id,api_key)
 
@@ -106,3 +106,23 @@ def process_articles(articles_list):
             articles_results.append(articles_object)
 
     return articles_results
+
+
+def search_articles(query):
+    '''
+    Function that gets the json response to our articles search url request.
+    '''
+    search_articles_url = 'https://newsapi.org/v2/everything?q={}&apiKey={}'.format(query,api_key)
+
+    with urllib.request.urlopen(search_articles_url) as url:
+        search_articles_data = url.read()
+        search_articles_response = json.loads(search_articles_data)
+
+        search_articles_results = None
+
+        if search_articles_response['articles']:
+            search_articles_list = search_articles_response['articles']
+            ssearch_articles_results = process_articles(search_articles_list)
+
+
+    return search_articles_results
