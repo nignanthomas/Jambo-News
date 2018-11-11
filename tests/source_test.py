@@ -1,7 +1,6 @@
 import unittest
-from models import source
+from app.models import Source
 
-Source = source.Source
 
 
 class SourceTest(unittest.TestCase):
@@ -20,7 +19,3 @@ class SourceTest(unittest.TestCase):
 
     def test_instance_correct(self):
         self.assertEqual(self.new_source.name,'National Geographic')
-
-
-if __name__ == '__main__':
-    unittest.main()
